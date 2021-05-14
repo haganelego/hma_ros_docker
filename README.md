@@ -1,5 +1,7 @@
 # About this image  
 Docker image for RC2021.   
+In detail, please show below link.  
+https://github.com/users/haganelego/packages/container/package/hma_ros_docker%2Fhma_ros    
 
 # requirement  
 - x86_64 CPU
@@ -27,7 +29,6 @@ Refer to the following link for installation
 https://github.com/NVIDIA/nvidia-docker/tree/master#quickstart  
 
 # test  
-https://github.com/users/haganelego/packages/container/package/hma_ros_docker%2Fhma_ros  
 1. Pull docker-image  
 ```bash  
 docker pull ghcr.io/haganelego/hma_ros_docker/hma_ros:melodic-cuda11.0-cudnn8-base
