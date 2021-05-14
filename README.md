@@ -1,5 +1,5 @@
 # About this image  
-RC2021用docker-image  
+Docker image for RC2021.   
 
 # requirement  
 - x86_64 CPU
@@ -19,14 +19,24 @@ RC2021用docker-image
 
 # docker instlation 
 ## docker  
-以下のリンクを参考にインストール  
+Refer to the following link for installation  
 https://docs.docker.com/engine/install/ubuntu/
 
 ## NVIDIA Container Toolkit  
-以下のリンクを参考にインストール  
+Refer to the following link for installation  
 https://github.com/NVIDIA/nvidia-docker/tree/master#quickstart  
 
 # test  
-```docker
-docker pull hoge
+https://github.com/users/haganelego/packages/container/package/hma_ros_docker%2Fhma_ros  
+1. Pull docker-image  
+```bash  
+docker pull ghcr.io/haganelego/hma_ros_docker/hma_ros:melodic-cuda11.0-cudnn8-base
+```  
+2. Check nvidia-smi is available in container  
+```bash
+docker run --rm --gpus all ghcr.io/haganelego/hma_ros_docker/hma_ros:melodic-cuda11.0-cudnn8-base nvidia-smi
+```  
+3. Check cuda is available in container
+```bash
+docker run --rm --gpus all ghcr.io/haganelego/hma_ros_docker/hma_ros:melodic-cuda11.0-cudnn8-base nvcc -V
 ```  
