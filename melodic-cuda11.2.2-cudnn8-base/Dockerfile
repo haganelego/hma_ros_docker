@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     dirmngr \
     gnupg2 \
     curl \
+    nano \
+    net-tools \
     && rm -rf /var/lib/apt/lists/*
 
 # setup keys
