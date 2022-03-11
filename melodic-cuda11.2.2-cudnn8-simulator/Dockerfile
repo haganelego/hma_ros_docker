@@ -34,6 +34,8 @@ RUN apt-get update && \
     apt-get install -y ros-$ROS_DISTRO-global-planner ros-$ROS_DISTRO-dwa-local-planner && \
     apt-get install -y ros-$ROS_DISTRO-joint-state-publisher ros-$ROS_DISTRO-joint-state-publisher-gui && \
     apt-get install -y ros-$ROS_DISTRO-robot-state-publisher && \
+    apt-get install -y ros-$ROS_DISTRO-joy ros-$ROS_DISTRO-roslint && \
+    apt-get install -y ros-$ROS_DISTRO-move-base ros-$ROS_DISTRO-map-server && \ 
     apt-get install -y python-catkin-tools python3-dev python3-catkin-pkg-modules python3-numpy ros-melodic-cv-bridge  && \
     apt-get install -y imagemagick && \
     apt-get clean
@@ -45,10 +47,14 @@ RUN pip3 install rospkg rosdep rosinstall && \
     pip3 install scikit-learn && \
     pip3 install open3d && \
     pip3 install opencv-contrib-python && \
-    pip3 install torch torchvision && \
     pip3 install termcolor && \
+    pip3 install cython && \
     pip3 install pycocotools
-    
+
+
+# install torch
+RUN pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html    
+
 # python2
 RUN pip install rosdep rosinstall && \
     pip install numpy matplotlib pandas && \
